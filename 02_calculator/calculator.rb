@@ -7,7 +7,7 @@ def subtract(a, b)
 end
 
 def sum(numbers)
-  numbers.inject(&:+) || 0
+  numbers.inject(0, &:+)
 end
 
 def multiply(numbers)
