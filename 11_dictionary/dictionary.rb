@@ -1,10 +1,4 @@
 class Dictionary
-  attr_reader :entries
-
-  def initialize
-    @entries = {}
-  end
-
   def add(args)
     if args.is_a? Hash 
       entries.merge!(args)
@@ -27,5 +21,9 @@ class Dictionary
 
   def printable
     keywords.map { |k| "[%s] %s" % [k, entries[k].inspect] }.join("\n")
+  end
+
+  def entries
+    @entries ||= Hash.new
   end
 end
