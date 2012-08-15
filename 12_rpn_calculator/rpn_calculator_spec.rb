@@ -75,9 +75,9 @@ describe RPNCalculator do
     calculator.push(3)
     calculator.push(4)
     calculator.divide
-    calculator.value.should == (4.0 / 3.0)
+    calculator.value.should == (4 / 3)
     calculator.times
-    calculator.value.should == (4.0 / 3.0) * 2
+    calculator.value.should == (4 / 3) * 2
   end
 
   it "resolves operator precedence unambiguously" do
@@ -130,7 +130,7 @@ describe RPNCalculator do
     calculator.evaluate("4 5 -").should ==
       (5 - 4)
 
-    calculator.evaluate("1 2 3 * + 4 5 - /").should ==
+    calculator.evaluate("1 2 3 * + 4 5.0 - /").should ==
       (5.0 - 4) / ((2 * 3) + 1)
   end
 
