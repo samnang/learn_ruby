@@ -58,6 +58,8 @@ describe XmlDocument do
   end
 
   it "indents" do
+    pending
+
     @xml = XmlDocument.new(true)
     @xml.hello do
       @xml.goodbye do
